@@ -1,0 +1,11 @@
+:~  title+'clickme'
+    info+'click a button to get points'
+    color+0xff.2255
+    image+'../clickme/img/logo.png'
+    base+'clickme'
+    glob-ames+[~bus 0v0]
+    version+[0 0 1]
+    website+'https://github.com/bacwyls/clickme'
+    license+'MIT'
+==
+
