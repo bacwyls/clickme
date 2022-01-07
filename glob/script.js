@@ -31,6 +31,15 @@ function makeDescription(points) {
   if(points < 64) {
     return "mediocre";
   }
+  if(points < 128) {
+    return "choob";
+  }
+  if(points < 256) {
+    return "wizard";
+  }
+  if(points < 512) {
+    return "warlord";
+  }
   return "godlike";
 }
 
