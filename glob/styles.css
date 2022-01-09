@@ -20,3 +20,7 @@ input {
   font-size: 4vmax;
 }
 
+nav a {
+  margin:1em;
+}
+

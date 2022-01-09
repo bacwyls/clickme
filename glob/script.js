@@ -6,13 +6,10 @@ var urb = new urbithttp.Urbit('', '', 'clickme');
 urb.ship = window.ship;
 urb.verbose = true;
 
-urb.subscribe({
-    app: "clickme",
-    path: "/point-updates",
-    event: updatePoints,
-    err: console.log,
-    quit: console.log,
-  });
+var path = window.location.pathname;
+var page = path.split("/").pop();
+
+
 
 function updatePoints(gift) {
   points = document.getElementById('points'); 
@@ -43,15 +40,42 @@ function makeDescription(points) {
   return "godlike";
 }
 
-
 function click() {
   // do poke 
   urb.poke({ app:'clickme', mark:'clickme-action',
     json: null
   });
 }
-button = document.getElementById('click-button'); 
-button.addEventListener('click', click);
+
+var subbed_patp;
+function search() {
+  subbed_patp = document.getElementById('patp');
+  urb.subscribe({
+      app: "clickme",
+      ship: subbed_patp.value,
+      path: "/point-updates",
+      event: updatePoints,
+      err: console.log,
+      quit: console.log,
+    });
+}
+
+if(page == "index.html" || !page) {
+  urb.subscribe({
+      app: "clickme",
+      path: "/point-updates",
+      event: updatePoints,
+      err: console.log,
+      quit: console.log,
+    });
+
+  button = document.getElementById('click-button'); 
+  button.addEventListener('click', click);
+
+} else if(page == "search.html") {
+  button = document.getElementById('search-button'); 
+  button.addEventListener('click', search);
+}
 
 });
 

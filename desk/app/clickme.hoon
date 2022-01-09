@@ -51,7 +51,6 @@
 ++  on-watch
  |=  =path
   ^-  (quip card _this)
-  ?.  =(src.bowl our.bowl)  `this
   ?+    path  (on-watch:def path)
     [%point-updates ~]
       :_  this

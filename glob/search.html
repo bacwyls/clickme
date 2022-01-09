@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>%clickme</title>
+  <title>%clickme - search</title>
   <link rel="shortcut icon" href="img/bacwyls.png" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +11,21 @@
 </head>
 
 <body>
-  <h1>%clickme</h1>
+  <h1>%clickme - search</h1>
   <nav>
   <a href="/">garden</a>
   <a href="index.html">home</a>
   <a href="search.html">search</a>
-  </nav>
   <hr>
+  </nav>
+  <form id="search-form" onsubmit="return false;">
+    <input id="patp" type="text">
+    <input id="search-button" type="button" value="OK">
+  </form>
   <p id="points">0</p>
   <p id="description">noob</p>
   <hr>
-  <form>
-  <input id="click-button" type="button" value="click me">
-  </form>
+
 
 </body>
 </html>
